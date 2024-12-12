@@ -22,7 +22,6 @@
 #     --database_path=${1}/database.db \
 #     --SiftMatching.use_gpu=true
 
-cp ../../data_colmap/results_aliked+lightglue_matching_lowres_quality_high/database.db ${1} #Modified depending on the data from DIM
 
 mkdir -p ${1}/sparse
 colmap mapper \
