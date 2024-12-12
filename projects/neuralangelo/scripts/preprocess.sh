@@ -12,6 +12,8 @@
 
 data_path=datasets/${1}_ds${3}
 bash projects/neuralangelo/scripts/run_ffmpeg.sh ${1} ${2} ${3}
+cp ../../data_colmap/results_aliked+lightglue_matching_lowres_quality_high/database.db ${1} #Modified depending on the data from DIM
+
 python3 projects/neuralangelo/scripts/debug.py
 #bash projects/neuralangelo/scripts/run_colmap.sh ${data_path}
 #python3 projects/neuralangelo/scripts/convert_data_to_json.py --data_dir ${data_path} --scene_type ${4}
