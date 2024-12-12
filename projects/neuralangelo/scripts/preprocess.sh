@@ -16,7 +16,7 @@ bash projects/neuralangelo/scripts/run_ffmpeg.sh ${1} ${2} ${3}
 git clone https://github.com/MagnumGreya/deep-image-matching.git
 cd ./deep-image-matching/
 pip install pycolmap==0.6.1
-python3 main.py --dir ../${data_path} --pipeline superpoint+lightglue
+python3 main.py --dir ../${data_path} --pipeline superpoint+lightglue --verbose
 
 python3 ../projects/neuralangelo/scripts/debug.py
 #bash projects/neuralangelo/scripts/run_colmap.sh ${data_path}
