@@ -10,17 +10,19 @@
 
 # usage: run_colmap.sh <project_path>
 
-colmap feature_extractor \
-    --database_path=${1}/database.db \
-    --image_path=${1}/images_raw \
-    --ImageReader.camera_model=SIMPLE_RADIAL \
-    --ImageReader.single_camera=true \
-    --SiftExtraction.use_gpu=true \
-    --SiftExtraction.num_threads=32
+# colmap feature_extractor \
+#     --database_path=${1}/database.db \
+#     --image_path=${1}/images_raw \
+#     --ImageReader.camera_model=SIMPLE_RADIAL \
+#     --ImageReader.single_camera=true \
+#     --SiftExtraction.use_gpu=true \
+#     --SiftExtraction.num_threads=32
 
-colmap sequential_matcher \
-    --database_path=${1}/database.db \
-    --SiftMatching.use_gpu=true
+# colmap sequential_matcher \
+#     --database_path=${1}/database.db \
+#     --SiftMatching.use_gpu=true
+
+cp ./data_colmap/results_aliked+lightglue_matching_lowres_quality_high/database.db ${1} #Modified depending on the data from DIM
 
 mkdir -p ${1}/sparse
 colmap mapper \
