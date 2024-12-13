@@ -22,7 +22,7 @@
 #     --database_path=${1}/database.db \
 #     --SiftMatching.use_gpu=true
 
-
+cp ../database.db ${1}
 mkdir -p ${1}/sparse
 colmap mapper \
     --database_path=${1}/database.db \
