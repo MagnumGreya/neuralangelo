@@ -12,9 +12,12 @@
 
 data_path=datasets/${1}_ds${3}
 bash projects/neuralangelo/scripts/run_ffmpeg.sh ${1} ${2} ${3}
-
+docker build --tag deep-image-matching .
 git clone https://github.com/MagnumGreya/deep-image-matching.git
 cd ./deep-image-matching/
+pip install --upgrade pip
+pip install deep-image-matching
+pip install pycolmap==0.6.1
 python3 main.py --data_dir ../${data_path} --pipeline superpoint+lightglue --verbose 
 #bash projects/neuralangelo/scripts/run_colmap.sh ${data_path}
 #python3 projects/neuralangelo/scripts/convert_data_to_json.py --data_dir ${data_path} --scene_type ${4}
