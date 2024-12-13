@@ -14,7 +14,9 @@ data_path=datasets/${1}_ds${3}
 bash projects/neuralangelo/scripts/run_ffmpeg.sh ${1} ${2} ${3}
 git clone https://github.com/MagnumGreya/deep-image-matching.git
 cd ./deep-image-matching/
-pip install --upgrade pip
+apt-get update
+apt-get install -y python3.9 python3.9-distutils
+ln -sf /usr/bin/python3.9 /usr/bin/python3
 pip install deep-image-matching
 pip install pycolmap==0.6.1
 python3 main.py --data_dir ../${data_path} --pipeline superpoint+lightglue --verbose 
