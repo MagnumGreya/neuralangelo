@@ -26,7 +26,7 @@
 mkdir -p ${1}/sparse
 colmap mapper \
     --database_path=${1}/database.db \
-    --image_path=${1}/images_raw \
+    --image_path=${1}/images \
     --output_path=${1}/sparse
 
 cp ${1}/sparse/0/*.bin ${1}/sparse/
@@ -44,7 +44,7 @@ for path in ${1}/sparse/*/; do
 done
 
 colmap image_undistorter \
-    --image_path=${1}/images_raw \
+    --image_path=${1}/images \
     --input_path=${1}/sparse \
     --output_path=${1} \
     --output_type=COLMAP
