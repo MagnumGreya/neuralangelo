@@ -13,4 +13,4 @@
 data_path=datasets/${1}_ds${3}
 image_path=${data_path}/images
 mkdir -p ${image_path}
-ffmpeg -i ${2} -vf "select=not(mod(n\,$3))" -vsync vfr -q:v 2 ${image_path}/frame_%04d.jpg
+ffmpeg -i ${2} -vf "select=not(mod(n\,$3))" -vsync vfr -q:v 2 -start_number 0 ${image_path}/frame_%04d.jpg
